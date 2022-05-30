@@ -3,6 +3,7 @@ import type { NextPage } from 'next'
 import { Layout } from '~/features/ui/components/Layout'
 
 import { EventList } from '../../components/EventLst'
+import { CreateEventButton } from '../../components/EventLst/parts/CreateEventButton'
 
 export const DashboardPage: NextPage = () => (
   <Layout>
@@ -11,5 +12,6 @@ export const DashboardPage: NextPage = () => (
       <h2>Event LIst</h2>
       <EventList />
     </section>
+    <CreateEventButton />
   </Layout>
 )

@@ -2,6 +2,8 @@ import type { FC, ReactNode } from 'react'
 
 import { Header } from '~/features/ui/components/Header'
 
+import { AsideCover } from './parts/AsideCover'
+
 type props = {
   children?: ReactNode
 }
@@ -9,7 +11,7 @@ type props = {
 export const LayoutPublic: FC<props> = ({ children }) => (
   <>
     <Header />
-    <aside />
+    <AsideCover />
     <main>{children}</main>
   </>
 )
