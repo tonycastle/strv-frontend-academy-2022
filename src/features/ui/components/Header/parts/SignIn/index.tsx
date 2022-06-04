@@ -5,6 +5,8 @@ import { Routes } from '~/features/core/constants/routes'
 
 export const SignIn: FC = () => (
   <Link href={Routes.LOGIN}>
-    Already have an account? <b>Sign in</b>
+    <a>
+      Already have an account? <b>Sign in</b>
+    </a>
   </Link>
 )

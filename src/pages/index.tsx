@@ -1,7 +1,1 @@
-import type { NextPage } from 'next'
-
-const Home: NextPage = () => {
-  return <div>Hello World</div>
-}
-
-export default Home
+export { DashboardPage as default } from '~/features/events/pages/DashboardPage'
