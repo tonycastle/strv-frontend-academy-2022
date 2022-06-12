@@ -4,27 +4,49 @@ import type { FormEvent } from 'react'
 
 import { Routes } from '~/features/core/constants/routes'
 import { Input } from '~/features/ui/components/Input'
-import { Layout } from '~/features/ui/components/Layout'
+import { LayoutInternal } from '~/features/ui/components/LayoutInternal'
+
+import {
+  CloseLink,
+  Container,
+  Desctiption,
+  FormWrapper,
+  StyledCloseIcon,
+  SubmitButton,
+  Title,
+} from './styled'
 
 export const CreateEventPage: NextPage = () => {
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    //do something
+
+    alert('TODO')
   }
 
   return (
-    <Layout>
-      <Link href={Routes.DASHBOARD}>X Close</Link>
-      <form onSubmit={(event) => onSubmit(event)}>
-        <h1>Create New Event</h1>
-        <p>Enter details below</p>
-        <Input type="text" name="title" label="Title" />
-        <Input type="text" name="description" label="Description" />
-        <Input type="date" name="Date" label="Date" />
-        <Input type="time" name="time" label="Time" />
-        <Input type="number" name="cqpacity" label="Capacity" />
-        <button type="submit">Create New Event</button>
-      </form>
-    </Layout>
+    <LayoutInternal
+      headerActionComponent={
+        <Link href={Routes.DASHBOARD} passHref>
+          <CloseLink>
+            <StyledCloseIcon aria-hidden="true" /> Close
+          </CloseLink>
+        </Link>
+      }
+    >
+      <Container>
+        <FormWrapper>
+          <Title>Create new event</Title>
+          <Desctiption>Enter details below.</Desctiption>
+          <form onSubmit={onSubmit}>
+            <Input label="Title" type="text" name="title" />
+            <Input label="Description" type="text" name="description" />
+            <Input label="Date" type="date" name="date" />
+            <Input label="Time" type="time" name="time" />
+            <Input label="Capacity" type="number" name="capacity" />
+            <SubmitButton accent="primary">Create New Event</SubmitButton>
+          </form>
+        </FormWrapper>
+      </Container>
+    </LayoutInternal>
   )
 }

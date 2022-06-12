@@ -1,11 +1,20 @@
 import type { FC } from 'react'
 
-export const EventItem: FC = () => (
-  <li>
+import { Article, Count, Description, Name, Title, EditButton } from './styled'
+
+type props = {
+  isRow: boolean
+}
+
+export const EventItem: FC<props> = ({ isRow }) => (
+  <Article isRow={isRow}>
     <time>00:00 May 29</time>
-    <h2>Event Title</h2>
-    <p>Event Ownerer</p>
-    <p>Event Description</p>
-    <button type="button">Edit</button>
-  </li>
+    <Title>Event Title</Title>
+    <Name>Event Owner</Name>
+    <Description>Event Description</Description>
+    <Count>
+      9 <span>of</span>20
+    </Count>
+    <EditButton>Edit</EditButton>
+  </Article>
 )
